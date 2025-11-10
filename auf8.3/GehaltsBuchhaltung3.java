@@ -20,7 +20,7 @@ public class GehaltsBuchhaltung3
       {
          sum += gehalt[i];
       }
-      System.out.println("Die Gesamte der Gehälter:   " + sum);
+      System.out.println("Die Gesamte der Gehälter:      " + sum);
       System.out.println();
 
       int  durchschnittlich = sum / gehalt.length;

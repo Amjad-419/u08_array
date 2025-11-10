@@ -1,0 +1,21 @@
+// auf8.08a
+
+Kursnummer Kursgebühr Kunden Frühbucher Teilnehmer
+              EUR     nummer   rabatt
+
+ "201105"    480.00    5001      20     "Anders, Max"
+ "201105"    480.00    4005       0     "Meier, Paul"
+ "201105"    480.00    4005       0     "Mueller, Anna"
+ "201105"    480.00    3100       0     "Mueller, Klaus"
+ "201105"    980.00    1200      20     "Schneider, Hans"
+ "201105"    980.00    3100       0     "Zuse, Maria"
+ "201105"    980.00    4005       0     "Lippmann, Jan"
+ "201105"    480.00    5001      20     "Mirkan, Arin"
+ "201105"    480.00    5001      20     "Leila, Abu"
+ "201105"    480.00    5001      20     "Can, Polat"
+ "201105"    480.00    5001      20     "Kendal, Biharin"
+ "201105"    480.00    5001       0     "Jochim, Kevin"
+ "201105"    480.00    5001       0     "Cudi, Zozan"
+ "201105"    480.00    5001       0     "Shirley, Levi"
+ "201105"    480.00    5001       0     "Savage, William"
+ "201105"    480.00    5001       0     "Helsten, Gunter"
