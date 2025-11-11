@@ -1,7 +1,7 @@
 // u08_array
-// auf8.15
+// auf8.16
 
-public class Regen7
+public class Regen8
 {
    public static void main (String[] args)
    {
@@ -11,13 +11,14 @@ public class Regen7
 
        String region[] = {"Nord", "Mitte", "Sued"};
        String tage[]   = {"Mo", "Di", "Mi", "Do", "Fr"};
-
-       final int tag = 0;
        
+
        System.out.print("Summe (mm): ");
+
        for(int r = 0 ; r < rainfall.length; r++)
        {
           int sum =0;
+
           for(int t = 0; t < rainfall[r].length; t++) 
           {
              for(int z = 0; z < rainfall[r][t].length; z++) 
@@ -26,28 +27,9 @@ public class Regen7
              }
           }
 
-          System.out.print("   "+ region[r] + "  " + sum);
+          double durchschnitt = (double) sum / rainfall[tag].length;
+          System.out.print("   "+ region[r] + "  " + durchschnitt);
        } 
-
-       System.out.println();
-
-       //+++++++++++++++++++++++++++++++++
-
-       System.out.print("Summe (mm):    ");
-       for(int t = 0; t < rainfall[tag].length; t++) 
-       {
-          int sum =0;
-
-          for(int r = 0; r < rainfall.length; r++) 
-          {
-             for(int z = 0; z < rainfall[r][t].length; z++) 
-             {
-                sum += rainfall[r][t][z];
-             }
-          }
-
-          System.out.print(tage[t]+ " " +sum + "      ");
-       }
 
        System.out.println();
    }
