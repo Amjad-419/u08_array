@@ -1,7 +1,7 @@
 // u08_array
 // auf8.20
 
-public class Lagerverwaltung1
+public class Lagerverwaltung3
 {
    public static void main(String[] args)
    {
@@ -40,39 +40,85 @@ public class Lagerverwaltung1
       
       //-------------------------------------------------------
       // Hier folgt der Code zur Loesung der Aufgabe:
+       String monate[] = {"Januer", "Februar", "Maerz",
+                          "April" , "Mai"    , "Juni" ,
+                          "Juli","August"   ,"Septemper",
+                          "Oktoper", "Novemoper","Dezemper",};
+
       int        artikelNr  = 0;      
       int        total      = 0;
+      int        zugang     = 0;
+      int        entnahme   = 0;   
 
       final int   ARNR      = 0;
+      final int   MOANT     = 1;
       final int 	AENDERUNG = 2;
       
       for(int i = 0; i < lager.length; i++)
       {
+         // auesserer Gruppenkopf
          if(artikelNr != lager[i][ARNR]) 
          {
             artikelNr = lager[i][ARNR];
             System.out.println("Artikel-Nr: " + artikelNr);
-            System.out.println();
+         }
+         
+         // Innnerer  Gruppenkopf
+         if( i == 0 || lager[i-1][MOANT] != lager[i][MOANT])
+         {
+            for(int j = 0; j < monate.length; j++)
+            {
+               if(j == lager[i][MOANT] -1)
+               {
+                  System.out.println();
+                  System.out.println("Monat:  " + monate[j]);
+               }
+            }
          }
 
+         // Gruppenrumpf
          if(lager[i][AENDERUNG] >= 0)
          {
-            System.out.println ("Bestand-Aenderung  +" + lager[i][AENDERUNG]);
+            System.out.printf("%-9s %+d%n", "Zugang ", lager[i][AENDERUNG]);
          }
          else
          {
-            System.out.println ("Bestand-Aenderung  " + lager[i][AENDERUNG]);
+            System.out.printf("%-9s %1d%n", "Entnahme ", lager[i][AENDERUNG]);
          }
 
          total += lager[i][AENDERUNG];
 
+
+
+         if(lager[i][AENDERUNG] >= 0)
+		   {   
+		      zugang      += lager[i][AENDERUNG];
+		   }
+		   else
+		   {  
+		      entnahme    += lager[i][AENDERUNG];
+         }
+
+
+         // Innerer Gruppenfuss
+         if(i == lager.length -1 || lager[i][MOANT] != lager[i+1][MOANT])
+         { 
+		      System.out.printf("%-18s %+d%n","Monats-Zugang", zugang);  //ist +
+		      System.out.printf("%-18s %1d%n","Monats-Entnahme  ", entnahme);   // ist -
+
+            zugang     = 0;
+            entnahme   = 0;
+         }
+
+         // Auesserer Gruppenfuss
          if(i == lager.length -1 || artikelNr != lager[i + 1][ARNR])  // i + 1 bedeutet die naechste
          {
                System.out.println();
-               System.out.println("Artikel-Bestand:    " + total);
-               System.out.println("-------------");
+               System.out.printf("%-19s %1d%n","Artikeler Bestand", total);
+               System.out.println("----------------------");
                total     = 0;                                        // muss noch mal null sein
          }
+
       }
    }
 }

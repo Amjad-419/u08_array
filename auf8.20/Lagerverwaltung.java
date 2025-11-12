@@ -40,25 +40,28 @@ public class Lagerverwaltung
       
       //-------------------------------------------------------
       // Hier folgt der Code zur Loesung der Aufgabe:
-      int artikelNr = 0;      
+      int artikelNr = 0; 
+
+      final int   ARNR      = 0;
+      final int 	AENDERUNG = 2;     
 
       System.out.println("Artikel-Nr: ");
       for(int i = 0; i < lager.length; i++)
       {
-         if(artikelNr != lager[i][0]) 
+         if(artikelNr != lager[i][ARNR]) 
          {
-            artikelNr = lager[i][0];
+            artikelNr = lager[i][ARNR];
             System.out.println();
             System.out.println("Artikel-Nr: " + artikelNr);
          }
 
-         if(lager[i][2] >= 0)
+         if(lager[i][AENDERUNG] >= 0)
          {
-            System.out.println ("Bestand-Aenderung +" + lager[i][2]);
+            System.out.println ("Bestand-Aenderung +" + lager[i][AENDERUNG]);
          }
          else
          {
-            System.out.println ("Bestand-Aenderung " + lager[i][2]);
+            System.out.println ("Bestand-Aenderung " + lager[i][AENDERUNG]);
          }
       }
    }
